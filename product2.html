@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dettaglio Prodotto - Fancy Product</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">MONDO <span>LAVORO</span></div>
+      <nav>
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mondolavoro.net/">Home</a>
+          </li>
+          <li>Azienda</li>
+          <li>Isacco</li>
+          <li>JHK</li>
+          <li>Sportswear</li>
+          <li>Calzature</li>
+          <li>Abbigliamento da lavoro</li>
+          <li>Brands</li>
+          <li>Servizi</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="homepage.html">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="homepage.html">Abbigliamento da lavoro</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Fancy Product
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Product Detail Section -->
+    <main class="container my-5">
+      <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-6">
+          <img src="PROMOline-Abbigliamento-da-lavoro.png"Fancy Product"
+          class="img-fluid" />
+        </div>
+        <!-- Product Info -->
+        <div class="col-md-6">
+          <h1>Fancy Product</h1>
+          <p class="h4 text-success">$40.00 - $80.00</p>
+          <p class="mt-3">
+            Pantaloni da lavoro di alta qualità, ideali per garantire comfort e
+            resistenza durante ogni attività lavorativa. Realizzati con
+            materiali durevoli e con ampie tasche per una maggiore praticità.
+          </p>
+          <!-- Taglia Selector -->
+          <div class="form-group">
+            <label for="sizeSelect">Seleziona la taglia:</label>
+            <select id="sizeSelect" class="form-control w-50">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
+          </div>
+          <button class="btn btn-success mr-2" onclick="addToCart()">
+            Aggiungi al carrello
+          </button>
+          <div class="mt-5">
+            <h2>Dettagli del Prodotto</h2>
+            <ul class="list-unstyled">
+              <li>Materiale: Cotone 65%, Poliestere 35%</li>
+              <li>Taglie disponibili: S, M, L, XL, XXL</li>
+              <li>Colori disponibili: Grigio, Nero, Blu</li>
+              <li>Resistenza all'usura</li>
+              <li>Adatto per ogni settore lavorativo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>Account</h5>
+            <ul class="list-unstyled">
+              <li>Login</li>
+              <li>Tracciamento Spedizioni</li>
+              <li>Area Privata</li>
+              <li>I miei ordini</li>
+              <li>Crea Account</li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>F.A.Q</h5>
+            <ul class="list-unstyled">
+              <li>Modalità di Pagamento</li>
+              <li>Termini e Condizioni d'uso</li>
+              <li>Spedizioni</li>
+              <li>Pagamenti Sicuri</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Contact us</h5>
+            <p>
+              Mondo Lavoro S.r.l.s.<br />Via Belvedere, 5<br />84091 -
+              Battipaglia (SA)
+            </p>
+            <p>0828370939</p>
+            <p>info@mondolavoro.net</p>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Follow us</h5>
+            <p>Facebook | Instagram</p>
+            <h6>Newsletter</h6>
+            <input
+              type="email"
+              class="form-control mb-2"
+              placeholder="Il tuo indirizzo email"
+            />
+            <button class="btn btn-success btn-sm">Invia</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let cart = [];
+
+      function addToCart() {
+        const size = document.getElementById("sizeSelect").value;
+        const product = {
+          name: "Fancy Product",
+          price: "$40.00 - $80.00",
+          size: size,
+        };
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        window.location.href = "cart.html";
+      }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
